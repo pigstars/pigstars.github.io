@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="C Primer Plus [14-17] 章总结第14章 结构和其他数据形式 结构的声明中，可以使用无结构标记例如：   1234struct &amp;#123;    char title[MAXTITL];    float value;&amp;#125; library;  初始化静态存储期的变量必须使用常值 结构的初始化器  1struct library lib = &amp;#123;.title=&quot;H">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/2017/05/22/C Primer Plus [14-17] 章总结/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="C Primer Plus [14-17] 章总结第14章 结构和其他数据形式 结构的声明中，可以使用无结构标记例如：   1234struct &amp;#123;    char title[MAXTITL];    float value;&amp;#125; library;  初始化静态存储期的变量必须使用常值 结构的初始化器  1struct library lib = &amp;#123;.title=&quot;H">
+<meta property="og:updated_time" content="2017-05-22T16:21:36.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+<meta name="twitter:description" content="C Primer Plus [14-17] 章总结第14章 结构和其他数据形式 结构的声明中，可以使用无结构标记例如：   1234struct &amp;#123;    char title[MAXTITL];    float value;&amp;#125; library;  初始化静态存储期的变量必须使用常值 结构的初始化器  1struct library lib = &amp;#123;.title=&quot;H">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-C Primer Plus [14-17] 章总结" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/05/22/C Primer Plus [14-17] 章总结/" class="article-date">
+  <time datetime="2017-05-22T12:28:03.000Z" itemprop="datePublished">2017-05-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="C-Primer-Plus-14-17-章总结"><a href="#C-Primer-Plus-14-17-章总结" class="headerlink" title="C Primer Plus [14-17] 章总结"></a>C Primer Plus [14-17] 章总结</h1><h2 id="第14章-结构和其他数据形式"><a href="#第14章-结构和其他数据形式" class="headerlink" title="第14章 结构和其他数据形式"></a>第14章 结构和其他数据形式</h2><ul>
+<li>结构的声明中，可以使用无结构标记<br>例如： </li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">struct</span> &#123;</span></div><div class="line">    <span class="keyword">char</span> title[MAXTITL];</div><div class="line">    <span class="keyword">float</span> value;</div><div class="line">&#125; library;</div></pre></td></tr></table></figure>
+<ul>
+<li>初始化静态存储期的变量必须使用常值</li>
+<li>结构的初始化器</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">struct</span> <span class="title">library</span> <span class="title">lib</span> = &#123;</span>.title=<span class="string">"Hello World"</span>,.value=<span class="number">22.5</span>&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>ANSIC C 及以上版本结构允许双向通信。结构体之间互相赋值</li>
+<li>传递结构体变量时使用结构指针，效率更高</li>
+<li>复合字面量</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;<span class="class"><span class="keyword">struct</span> <span class="title">library</span>&#125;&#123;</span><span class="string">"Hello World"</span>,<span class="number">22.5</span>&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>伸缩型数组成员(flexible array member)<ul>
+<li>伸缩型数组成员必须是最后一个成员</li>
+<li>结构中必须至少有一个成员</li>
+<li>声明类似数组，方括号中为空</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">struct</span> <span class="title">flex</span></span></div><div class="line">&#123;</div><div class="line">	<span class="keyword">int</span> count;</div><div class="line">	<span class="keyword">double</span> average;</div><div class="line">	<span class="keyword">double</span> scores[];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>希望声明一个指向struct flex 类型的指针，然后用malloc分配足够的空间，以struct flex中常规内容和伸缩性数组成员所需要的额外空间.</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">struct</span> <span class="title">flex</span> * <span class="title">pf</span>;</span></div><div class="line">pf = <span class="built_in">malloc</span> (<span class="keyword">sizeof</span>(struct flex)+<span class="number">5</span>*<span class="keyword">sizeof</span>(<span class="keyword">double</span>))</div></pre></td></tr></table></figure>
+<p>要求：</p>
+<pre><code>- 不要使用结构进行赋值或拷贝
+- 不要以按值方式把这种结构传递给结构
+- 不要使用带伸缩型数组成员的结构作为数组成员或另一个结构的成员，要把结构的地址传递给函数
+</code></pre><ul>
+<li><strong>联合</strong>：一种数据类型，能在同一个内存中存储不同的数据类型。<br>编译器分配足够的空间以便它能存储联合声明中占用最大字节的类型。<br><strong>联合只允许初始化第1个成员</strong></li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">union</span> hold&#123;</div><div class="line">	<span class="keyword">int</span> digit;</div><div class="line">	<span class="keyword">double</span> bigfl;</div><div class="line">	<span class="keyword">char</span> letter;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>枚举类型：声明符号名称来表示整型常量。</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">enum</span> spectrum &#123; red,orange,green ,blue ,violet &#125;</div></pre></td></tr></table></figure>
+<p>枚举符都是int类型,默认从0开始<br>可以为枚举常量指定整数类型，后面的常量被赋予后续的值</p>
+<ul>
+<li>函数指针</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">ToUpper</span> <span class="params">(<span class="keyword">char</span> * )</span> <span class="comment">// 函数声明</span></span></div><div class="line"></div><div class="line"><span class="title">void</span> <span class="params">(*pf)</span><span class="params">(<span class="keyword">char</span> * )</span> <span class="comment">// 声明函数指针pf.该指针指向的函数接受一个字符指针，返回值为void.</span></div><div class="line"></div><div class="line"><span class="params">(*pf)</span><span class="params">(mis)</span> </div><div class="line"><span class="title">ToUpper</span><span class="params">(mis)</span> <span class="comment">// 两者等价，都表示执行函数ToUpper</span></div></pre></td></tr></table></figure>
+<h2 id="第15章-位操作"><a href="#第15章-位操作" class="headerlink" title="第15章 位操作"></a>第15章 位操作</h2><ul>
+<li>用法：掩码 设置某些位的开关 flag &amp; MASK</li>
+<li>用法：打开位 需要打开一个值的特定位，同时保持其他位不变 flag | MASK</li>
+<li>用法：关闭位 需要不影响其他位的情况下关闭指定的位 flag = flag &amp; ~MASK</li>
+<li>用法：切换位 打开已关闭的，或关闭已打开的。 flag = flag ^ MASK 将切换该值与MASK为1的位相对应的位</li>
+<li>用法：检查位 需要检查某位的值 （flag &amp; MASK）== MASK</li>
+<li>位字段：</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">struct</span> &#123;</span></div><div class="line">	<span class="keyword">unsigned</span> <span class="keyword">int</span> autfd :<span class="number">1</span>; </div><div class="line">	<span class="keyword">unsigned</span> <span class="keyword">int</span> bldfc :<span class="number">1</span>;</div><div class="line">	<span class="keyword">unsigned</span> <span class="keyword">int</span> undln :<span class="number">1</span>;</div><div class="line">	<span class="keyword">unsigned</span> <span class="keyword">int</span> itals :<span class="number">1</span>;</div><div class="line">&#125; prnt;</div></pre></td></tr></table></figure>
+<ul>
+<li>声明总位数超过unsigned int 会用到下一个int，会自动移动跨界字段</li>
+<li>_Alignas 说明符指定一个变量或类型的对齐值</li>
+</ul>
+<h2 id="第16章-C预处理器和C库"><a href="#第16章-C预处理器和C库" class="headerlink" title="第16章 C预处理器和C库"></a>第16章 C预处理器和C库</h2><ul>
+<li>C预处理器在程序执行之前查看程序，预处理器不做计算，不对表达式求值，只进行替换</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">define</span> SQUARE(X) X*X</span></div></pre></td></tr></table></figure>
+<p>X为宏参数列表，X*X为替换列表</p>
+<p> #define 中使用参数</p>
+<pre><code>- 函数调用在程序运行时把参数的值传递给函数
+- 宏调用在编译之前把参数记号传递给程序
+</code></pre><ul>
+<li>用宏参数创建字符串：#运算符</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">define</span> PSQR(x) printf(<span class="meta-string">"The square of "</span>#x<span class="meta-string">" is %d .\n"</span>,((x)*(x)))</span></div></pre></td></tr></table></figure>
+<p>C允许在字符串中包含宏参数，在类函数宏的替换体中，#号作为一个预处理运算符，可以把记号替换为成字符串，x为宏形参，那么#x就是转换为字符串“x”的形参名</p>
+<ul>
+<li>预处理器黏合剂：##运算符</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> XNAME(n) x##n</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> PRINT_XN(n) print(<span class="meta-string">"x"</span>#n<span class="meta-string">"=%d\n"</span>,x##n)</span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">	<span class="function"><span class="keyword">int</span> <span class="title">XNAME</span><span class="params">(<span class="number">1</span>)</span> </span>= <span class="number">14</span>;</div><div class="line">	<span class="function"><span class="keyword">int</span> <span class="title">XNAME</span><span class="params">(<span class="number">2</span>)</span> </span>= <span class="number">20</span>;   <span class="comment">// int x2=20</span></div><div class="line">	<span class="keyword">int</span> x3 = <span class="number">30</span>;</div><div class="line">	PRINT_XN(<span class="number">1</span>);	<span class="comment">// printf("x1=%d\n",x1);</span></div><div class="line">	PRINT_XN(<span class="number">2</span>);</div><div class="line">	PRINT_XN(<span class="number">3</span>);</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// x1=14</span></div><div class="line"><span class="comment">// x2=20</span></div><div class="line"><span class="comment">// x3=30</span></div></pre></td></tr></table></figure>
+<p>运算符把记号组合为一个新的运算符</p>
+<ul>
+<li>变形参 … 和 <strong>VA_ARGS</strong>  以及后面的可变参数库stdarg.h</li>
+<li>宏：宏生成内联代码，在程序中生成语句，不用担心变量类型</li>
+<li>文件包含，当预处理器发现#include 指令时会查看后面的文件名并把文件的内容包含到当前文件，替换#include指令的位置<br>UNIX中，尖括号告诉预处理器在标准系统目录中查找该文件。双引号表示首先在当前目录中（或文件名中指定的其他目录）查找该文件，如果未找到再查找标准系统目录</li>
+<li>使用头文件，<strong>明示常量</strong>，<strong>宏函数</strong>，<strong>函数声明</strong>，<strong>结构模版定义</strong>，<strong>类型定义</strong></li>
+<li>#undef 指令用于“取消”已定义的#define指令</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">define</span> LIMIT 400</span></div><div class="line"><span class="meta">#<span class="meta-keyword">undef</span> LIMIT</span></div></pre></td></tr></table></figure>
+<ul>
+<li>#ifdef,#else,#endif</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> MAVIS</span></div><div class="line">	<span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"horse.h"</span></span></div><div class="line">	<span class="meta">#<span class="meta-keyword">define</span> STABLES 15</span></div><div class="line"><span class="meta">#<span class="meta-keyword">else</span></span></div><div class="line">	<span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"cow.h"</span></span></div><div class="line">	<span class="meta">#<span class="meta-keyword">define</span> STABLES 15</span></div></pre></td></tr></table></figure>
+<ul>
+<li>#ifndef：用法与#ifdef用法类似，判断后面的标志符是否是未定义的，常用于定义之前未定义的常量</li>
+<li>预定义宏</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>宏</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>__DATE__</td>
+<td>预处理的日期</td>
+</tr>
+<tr>
+<td>__FILE__</td>
+<td>表示当前源代码文件名的字符串字面量</td>
+</tr>
+<tr>
+<td>__LINE__</td>
+<td>表示当前源代码文件中行号的整型常量</td>
+</tr>
+<tr>
+<td>__STDC__</td>
+<td>设置为1，表明实现遵循C标准</td>
+</tr>
+<tr>
+<td>__STDC<em>HOSTED\</em>_</td>
+<td>本机环境设置为1，否则设置为0</td>
+</tr>
+<tr>
+<td>__STDC<em>VERSION\</em>_</td>
+<td>支持C99标准，设置为199901L；支持C11标准，设置为201112L</td>
+</tr>
+<tr>
+<td>__TIME__</td>
+<td>翻译代码的时间，格式为“hh:mm:ss”</td>
+</tr>
+<tr>
+<td>__func__</td>
+<td>代表函数名的字符串</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>#line指令重置<strong>LINE</strong> 和 <strong>FILE</strong></li>
+<li>#error 指令让预处理器发送一条错误消息</li>
+<li>现在的编译器中，编译器都有自己的编译指示集，可以通过命令行参数或IDE菜单修改编译器的一些设置<br>  #pragma 把编译器指令放入源代码中，可以在源代码中修改编译器的一些设置</li>
+<li>泛型选择，没有特定类型，但是一旦指定类型，就可以转换成指定类型的代码</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">define</span> MYTYPE(X) _Generic((X),\</span></div><div class="line">	int:<span class="meta-string">"int"</span>,\</div><div class="line">	float:<span class="meta-string">"float"</span>,\</div><div class="line">	double:<span class="meta-string">"double"</span>,\</div><div class="line">	default:<span class="meta-string">"other"</span>\</div></pre></td></tr></table></figure>
+<p>*内联函数，C99和C11标准：把函数变成内联函数尽可能快地调用该函数，编译器可能会用内联代码替换函数调用，并执行一些优化。</p>
+<ul>
+<li>断言,assert()，若表达式为假，就在标准错误流中写入一条错误信息</li>
+</ul>
+<p>##第17章 高级数据表示</p>
+<ul>
+<li>ADT抽象数据类型：<ul>
+<li>类型名：</li>
+<li>类型熟悉：</li>
+<li>类型操作：</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/05/22/C Primer Plus [14-17] 章总结/" data-id="cj4calazu00024q98rr8hk3j2" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/05/22/C Primer Plus [11-13] 章总结/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/05/22/C Primer Plus 读后感/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/06/24/反应堆/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/21/Nginx/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2017/05/30/服务器端编程介绍/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2017/05/24/C++ Primer Plus[5-9] 章总结/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2017/05/22/C Primer Plus [1-10] 章总结/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="C++ Primer Plus [1-4] 章总结第1章 预备知识 C++诞生于贝尔实验实验室，Bjarne Stroustrup 于20世纪80年代开发出。 1990 美国国家标准局（ANSI）专门负责制定C++标准。国际标准化组织（ISO）很快加入行列，一起制定C++标准  C++98 -&amp;gt; C++98/C++03 -&amp;gt; C++11 UNIX编译和链接：编译，编译器生成一个扩展名为">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/2017/05/22/C++ Primer Plus [1-4] 章总结/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="C++ Primer Plus [1-4] 章总结第1章 预备知识 C++诞生于贝尔实验实验室，Bjarne Stroustrup 于20世纪80年代开发出。 1990 美国国家标准局（ANSI）专门负责制定C++标准。国际标准化组织（ISO）很快加入行列，一起制定C++标准  C++98 -&amp;gt; C++98/C++03 -&amp;gt; C++11 UNIX编译和链接：编译，编译器生成一个扩展名为">
+<meta property="og:updated_time" content="2017-05-22T16:21:49.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+<meta name="twitter:description" content="C++ Primer Plus [1-4] 章总结第1章 预备知识 C++诞生于贝尔实验实验室，Bjarne Stroustrup 于20世纪80年代开发出。 1990 美国国家标准局（ANSI）专门负责制定C++标准。国际标准化组织（ISO）很快加入行列，一起制定C++标准  C++98 -&amp;gt; C++98/C++03 -&amp;gt; C++11 UNIX编译和链接：编译，编译器生成一个扩展名为">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-C++ Primer Plus [1-4] 章总结" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/05/22/C++ Primer Plus [1-4] 章总结/" class="article-date">
+  <time datetime="2017-05-22T12:28:03.000Z" itemprop="datePublished">2017-05-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="C-Primer-Plus-1-4-章总结"><a href="#C-Primer-Plus-1-4-章总结" class="headerlink" title="C++ Primer Plus [1-4] 章总结"></a>C++ Primer Plus [1-4] 章总结</h1><h2 id="第1章-预备知识"><a href="#第1章-预备知识" class="headerlink" title="第1章 预备知识"></a>第1章 预备知识</h2><ul>
+<li>C++诞生于贝尔实验实验室，Bjarne Stroustrup 于20世纪80年代开发出。</li>
+<li>1990 美国国家标准局（ANSI）专门负责制定C++标准。国际标准化组织（ISO）很快加入行列，一起制定C++标准<br>  C++98 -&gt; C++98/C++03 -&gt; C++11</li>
+<li>UNIX编译和链接：编译，编译器生成一个扩展名为.o的目标代码文件，编译器自动将目标代码文件传递给系统链接程序，生成可执行文件a.out。如果只使用一个源文件，链接程序将删除spiffy.o。如果有多个则不删，方便下次链接。</li>
+</ul>
+<h2 id="第2章-开始学习C"><a href="#第2章-开始学习C" class="headerlink" title="第2章 开始学习C++"></a>第2章 开始学习C++</h2><ul>
+<li>通常，main函数被启动代码调用，启动代码由编译器添加到程序中</li>
+<li><p>名称空间，有助于组织程序。防止不同文件中相同的名称之间干扰</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;  <span class="comment">//放在函数之前，让文件中左右函数都能够使用名称空间std中所有的元素。</span></div><div class="line"></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>; <span class="comment">//放在特定的函数定义中，让该函数能够使用名称空间std中的所有元素</span></div><div class="line"></div><div class="line"><span class="keyword">using</span> <span class="built_in">std</span>::<span class="built_in">string</span>;</div><div class="line"><span class="keyword">using</span> <span class="built_in">std</span>::<span class="built_in">std</span>; <span class="comment">// 在特定的函数使用此，使得特定的函数能够实用制定的元素</span></div><div class="line"></div><div class="line"><span class="built_in">std</span>::<span class="built_in">string</span> <span class="comment">// 完全不使用编译指令</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="第3章-处理数据"><a href="#第3章-处理数据" class="headerlink" title="第3章 处理数据"></a>第3章 处理数据</h2><ul>
+<li><p>默认情况下，cout以十进制格式显示整数。</p>
+<ul>
+<li>dec 指示cout以十进制输出</li>
+<li>hex 指示cout以十六进制输出</li>
+<li><p>oct 指示cout以八进制输出</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// std空间中 </span></div><div class="line">  <span class="built_in">cout</span>&lt;&lt;dec</div><div class="line">  <span class="built_in">cout</span>&lt;&lt;hex</div><div class="line">  <span class="built_in">cout</span>&lt;&lt;oct</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>C++ 默认将整型常量存储为int 。除非有说明 有后缀L，太大，<br>对于不带后缀的十进制数，使用以下中最小类型<br>int ,long 或 long long<br>对于不带后缀的十六进制或八进制整数，是用以下中最小类型<br>int , unsigned int ,long ,unsigned long ,long long ,unsigned long long </p>
+</li>
+<li>C++11 新增char16_t,char32_t<br>使用前缀u表示char16_t字符常量和字符串常量 u’C’ u”be good”<br>使用前缀U表示char32_t常量U’R’ U’dirty rat’</li>
+<li><p>类型转换</p>
+<ul>
+<li>初始化和赋值进行的转换：值将被转换为接受变量的类型</li>
+<li>以{}方式初始化时进行的转换：较为严格，列表初始化不允许<strong>缩窄</strong></li>
+<li><p>表达式中的转换：</p>
+<ul>
+<li>bool,char,unsigned char ,signed char 和 short值转换为int <strong>整型提升</strong></li>
+<li>运算涉及两种类型时，较小的类型将被转换为较大的类型</li>
+</ul>
+</li>
+<li><p>传递参数时的转换：由C++原型控制</p>
+</li>
+<li>强制类型转换：<br>(typename) value<br>typename (value)</li>
+</ul>
+</li>
+<li><strong>auto</strong> C++11新增加auto,让编译器能够更加初始值的类型推断变量的类型。与C大不同</li>
+</ul>
+<h2 id="第4章-复合类型"><a href="#第4章-复合类型" class="headerlink" title="第4章 复合类型"></a>第4章 复合类型</h2><ul>
+<li>输入读取</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cin</span>&gt;&gt;  <span class="comment">//cin使用空白（空格，制表符和换行符）来确定字符串的结束位置</span></div><div class="line"><span class="built_in">cin</span>.getline() <span class="comment">// 读取一行，直到到达换行符，丢弃换行符</span></div><div class="line"><span class="built_in">cin</span>.get() <span class="comment">// 读取一行，当遇到换行符时结束，将换行符保留在输入序列中</span></div></pre></td></tr></table></figure>
+<ul>
+<li>C++98 通过string类扩展了C++库<br>  string 类具有自动调整大小的功能<ul>
+<li>可以将一个string对象赋值给另一个string对象</li>
+<li>可以添加到另一个对象末尾</li>
+</ul>
+</li>
+<li>原始字符串raw，原始字符串中\n不表示换行符</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cout</span>&lt;&lt;<span class="string">R"(Jim "</span>King<span class="string">" Tutt uses "</span>\n<span class="string">" instead of endl.)"</span>;</div><div class="line"></div><div class="line"><span class="built_in">cout</span>&lt;&lt; <span class="string">R"+*("</span>Who wouldn't?)<span class="string">",she whispered.)+*"</span>&lt;&lt;<span class="built_in">endl</span>;	<span class="comment">// 使用“+*( 和 )+*" 替代默认界定符“(和)"</span></div></pre></td></tr></table></figure>
+<ul>
+<li>C++允许在声明结构变量时省略关键字struct</li>
+<li>共用体 union  与C类似，匿名共用体</li>
+<li>枚举 enum</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">enum</span> spectrum &#123;red,orange,yellow,green,blue,violet,indigo,ultraviolet&#125;;</div><div class="line"> </div><div class="line">spectrum band;</div><div class="line">band = <span class="number">4</span> ;<span class="comment">// 非法	在不进行强制类型转换的情况下，只能将定义枚举时使用的枚举量赋给这种枚举的变量 </span></div><div class="line">band = red; <span class="comment">// 可以</span></div><div class="line"></div><div class="line"><span class="keyword">int</span> color = blue;</div><div class="line">color = <span class="number">3</span>+red; <span class="comment">// 可以，枚举量时整型，可被提升为int类型，但int类型不能自动转换为枚举类型</span></div></pre></td></tr></table></figure>
+<p>枚举的范围：每个枚举都有取值范围，通过强制类型转换可以将取值范围中的任何整数赋给枚举变量。上限：找到大于这个最大值的最小的2的幂减1.下限：不小于0则取0，否则找到小于这个最小值的最小的2的幂加1</p>
+<ul>
+<li>指针<br>  使用new来创建动态数组</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> *psome = <span class="keyword">new</span> <span class="keyword">int</span> [<span class="number">10</span>]; <span class="comment">//[] 中可以是使用变量</span></div><div class="line">delet [] psome;</div></pre></td></tr></table></figure>
+<pre><code>- 不用使用delete来释放不是new分配的内存
+- 不要用delete释放两次
+- 对空指针应用delete是安全的
+</code></pre><ul>
+<li>数组：</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">short</span> tell[<span class="number">10</span>];</div><div class="line"><span class="built_in">cout</span>&lt;&lt;tell&lt;&lt;<span class="built_in">endl</span>;</div><div class="line"><span class="built_in">cout</span>&lt;&lt;&amp;tell&lt;&lt;<span class="built_in">endl</span>;</div><div class="line"><span class="comment">//从数字上说两个地址相同。但是概念上 tell是是一个两个字节内存块的地址，</span></div><div class="line"><span class="comment">//&amp;tell是一个指向包含20个元素的short数组的指针</span></div></pre></td></tr></table></figure>
+<ul>
+<li>模板类:vector和array (C++11)</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></div><div class="line">vecotor&lt;<span class="keyword">int</span>&gt;vi; <span class="comment">// vector对象在你插入或添加值时自动调整长度</span></div><div class="line">vecotor&lt;<span class="keyword">int</span>&gt; vd(<span class="number">5</span>); <span class="comment">// 也可以指定长度</span></div></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;array&gt;</span></span></div><div class="line"><span class="built_in">array</span>&lt;<span class="keyword">int</span>,5&gt; ai; <span class="comment">//长度固定的数组,可以互相赋值</span></div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/05/22/C++ Primer Plus [1-4] 章总结/" data-id="cj4calazx00044q980p6ho96q" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/05/22/C Primer Plus 读后感/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/06/24/反应堆/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/21/Nginx/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2017/05/30/服务器端编程介绍/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2017/05/24/C++ Primer Plus[5-9] 章总结/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2017/05/22/C Primer Plus [1-10] 章总结/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
