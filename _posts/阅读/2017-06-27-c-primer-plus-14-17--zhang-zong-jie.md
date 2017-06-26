@@ -3,7 +3,7 @@ layout: post
 title: "C Primer Plus [14-17] 章总结"
 description: ""
 category: "阅读"
-tags: "C Prim Plus"
+tags: "CPrimPlus"
 ---
 
 ##  第14章 结构和其他数据形式

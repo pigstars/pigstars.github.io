@@ -3,7 +3,7 @@ layout: post
 title: "C Primer Plus [11-13] 章总结"
 description: ""
 category: "阅读"
-tags: "C Prim Plus"
+tags: "CPrimPlus"
 ---
 
 ## 第11章 字符串与字符串函数

@@ -3,7 +3,7 @@ layout: post
 title: "C Primer Plus [1-10] 章总结"
 description: ""
 category: "阅读"
-tags: "C Prim Plus"
+tags: "CPrimPlus"
 ---
 
 ## 第1章 初识C语言
