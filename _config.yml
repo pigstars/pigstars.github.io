@@ -32,8 +32,7 @@ active: 思考
 
 # 首页除了最新文章外显示分类
 cates: 
-  - React
-  - 摄影
+
 
 # 中文本地化
 locals:
