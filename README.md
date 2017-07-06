@@ -1,18 +1,13 @@
-> # This Project Is Deprecated
+> # Peter's Personal Blog
+> More details and new features: http://pigstars.githug.io
 
-> More details and new features: https://github.com/JimmyLv/jimmylv.github.io
+##  The blog is used jekyll
 
+[more details about jekyll ](http://jekyll.com.cn)
 
-## 使用Rakefile自动生成文章格式
+## The Blog's Theme
+[more details about theme](https://github.com/lay1010/lay1010.github.io)
 
-```shell
-rake post title="A Title" [category="category"] [tags=[tag1,tag2]] [description="description"]
-```
+## The Blog's CDN
+[more details about CDN upyun](https://www.upyun.com)
 
-ps: this will reate category_imgs and post_imgs directory for this post article.
-
-## 修改样式
-
-button属性修改在bootstrap.css里面
-
-button显示修改在-include/footer.html和base.js里面
