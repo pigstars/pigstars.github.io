@@ -3,7 +3,7 @@ layout: post
 title: "C++ Primer Plus [5-9] 章总结"
 description: ""
 category: "阅读"
-tags: "C++PrimerPlus"
+tags: "CppPrimerPlus"
 ---
     
 # C++ Primer Plus[5-9] 章总结

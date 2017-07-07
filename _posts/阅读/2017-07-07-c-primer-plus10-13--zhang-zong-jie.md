@@ -3,7 +3,7 @@ layout: post
 title: " C++ Primer Plus[10-13] 章总结"
 description: "description"
 category: "阅读"
-tags: "C++PrimerPlus"
+tags: "CppPrimerPlus"
 ---
 # C++ Primer Plus[10-13] 章总结
 ## 第10章 对象和类
