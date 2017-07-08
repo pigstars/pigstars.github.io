@@ -5,7 +5,7 @@ description: "description"
 category: "知识"
 tags: "CPP"
 ---
-    
+
 # C++ 模板使用方法总结
 **泛型**
 ## 函数模板
@@ -39,7 +39,7 @@ void Swap(AnyType &a ,AnyType &b,int t)
 * 模板函数显式具体化
     - 具体化优先于常规模板，非模板函数优先于具体化和常规模板
     - 显示具体化的原型和定义应该以template<>打头，并通过名称来指出类型
-    
+
 ```C
 struct job
 {
@@ -102,16 +102,16 @@ template <class Type>
 class Stack
 {
 private:
-    Type long[MAX];
+    Type item[MAX];
     int top;
 public:
     Stack();
     bool isEmpty();
     bool isFull();
-    bool push(const Type & long);
-    bool pop(Type & long);
+    bool push(const Type & item);
+    bool pop(Type & item);
     Stack & oprator = (const Stack &st) //可以在模板类声明或模板函数定义内使用Stack，但在指定返回类型或使用作用域解析运算符时，必须使用完整的Stack<Type>。
-} 
+}
 template <class Type>
 Stack<Type> ::Stack()   // 需要修改类限定符
 {
@@ -134,15 +134,15 @@ Stack<string> clonels;
 表达式参数方法使用的是为自动变量维护的内存栈。
 * 模板多功能性
  - 递归使用模版
- 
+
  ```C
  ArrayTP< ArrayTP<int,5>,10> twodee;
  ```
  - 使用多个类型参数
  - 默认类型参数
- 
+
 ```C
-tempalte <class T1,class T2 = int> 
+tempalte <class T1,class T2 = int>
 class Topo
 {...}
 ```
@@ -150,16 +150,16 @@ class Topo
 * 模板类的实例化与具体化
 实例化：告诉编译器生成函数定义
  - 隐式实例化：需要对象之前，不会生成类的隐式实例化
- - 
+ -
  ```C
  ArrayTP<double ,30> stuff
  ```
  - 显示实例化：生成类声明以及方法定义
- 
+
  ```C
  template class ArrayTP<string,100>;
  ```
- 
+
 具体化：告诉编译器不要用模版生成该定义
 
 - 显示具体化：特定类型（用于替换模版中的泛型）的定义。
@@ -219,7 +219,7 @@ public:
     friend void report(HasFriend<T> &);
 }
 ```
- 
+
 - 约束模板友元：友元的类型取决于类被实例化时的类型
 
 ```C
@@ -250,6 +250,3 @@ class ManyFriends
 ```
 
 ## 可变参数模板
-
-
-
