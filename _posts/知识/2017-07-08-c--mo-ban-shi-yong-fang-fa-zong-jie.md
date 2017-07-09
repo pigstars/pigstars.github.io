@@ -9,7 +9,7 @@ tags: "CPP"
 # C++ 模板使用方法总结
 **泛型**
 ## 函数模板
-* 模板示例：
+### 模板示例：
 
 ```C
 template <typename AnyType>
@@ -23,7 +23,7 @@ void Swap(AnyType &a ,AnyType &b)
 ```
 第一行指出要建立一个模板函数，类型命名为AnyType(常用 T，Type)，typename可用关键字class代替
 
-* 模版重载
+### 模版重载
 
 ```C
 template <typename AnyType>
@@ -54,7 +54,7 @@ template<> void Swap<job>(job &,job &);
 //job可选 因为参数类型可表明
 template<> void Swap(job &,job &);
 ```
-* 实例化于具体化
+### 实例化与具体化
 代码中包含函数模板本身并不会生成函数定义，指示一个用于生成函数定义的方案。编译器使用模板为特定类型生成函数定义，得到模板实例。
 
 显式实例化
@@ -96,7 +96,7 @@ auto gt(T1 x,T2 y) -> dcltype(x+y)
 ```
 
 ## 类模板
-* 类模板示例
+### 类模板示例
 
 ```C
 template <class Type>
@@ -124,6 +124,7 @@ bool Stack<Type>::isEmpty()
 return top = 0;
 }
 ```
+
 * 使用模板类
 
 ```C
@@ -151,7 +152,7 @@ class Topo
 * 模板类的实例化与具体化
 实例化：告诉编译器生成函数定义
  - 隐式实例化：需要对象之前，不会生成类的隐式实例化
- -
+ 
  ```C
  ArrayTP<double ,30> stuff
  ```
@@ -208,7 +209,7 @@ Crab<King> legs
 //则 s1为 King<int> s2为King<double>
 ```
 
-* 模版类和友元
+### 模版类和友元
 - 非模板友元：
 
 ```C
