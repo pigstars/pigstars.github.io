@@ -62,6 +62,7 @@ StringBad * pStringBad = new StringBad(motto);
 ```
 * 赋值运算符
     原型：
+    
     ```C
     StringBad & StringBad::operator=(const StringBad &st);
     
