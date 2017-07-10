@@ -253,4 +253,25 @@ class ManyFriends
 
 ## 可变参数模板
 
+能够创建可接受可变数量的参数的模板函数和模板类。
+C++11 提供了一个用省略号表示的元运算符，能够表明模板参数包的标志符。
+模板参数包基本上是一个类型列表，函数参数包基本上是一个值列表
+
+```C
+template<typename... Args>  // 模版参数包
+void show_list(Args... args) // 函数参数包
+{
+}
+
+// 使用递归展开参数包
+
+template<typename T, typename... Args>
+void show_list3(T value,Args... args)
+{
+    std::cout<<value<<", ";
+    show_list3(arg...);
+}
+
+```
+
 
