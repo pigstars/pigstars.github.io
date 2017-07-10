@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "C++ 新标准"
+title: "C++11 新标准探讨"
 description: "description"
 category: "知识"
 tags: "CPP"
