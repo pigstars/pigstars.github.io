@@ -78,7 +78,8 @@ void BST<T>::bfs(BSTNode<T> * root)
 			if(temp == last)
 			{
 				cout<<endl;
-				last = nlast; // 当该行遇到最后一个元素时，换行，此时nlast一定是下一行的最末元素，因为该行的所有孩子进入队列
+				last = nlast; 
+				// 当该行遇到最后一个元素时，换行，此时nlast一定是下一行的最末元素，因为该行的所有孩子进入队列
 
 			}
 			else
@@ -153,8 +154,9 @@ void BST<T>::preorder(BSTNode<T> *root)
 }
 
 // 中序遍历
-// 首先将最左边的元素依次入栈，然后弹出栈，访问该节点，指向该节点右节点，
-// 下次循环开始，将该节点的左节点依次入栈，弹栈，访问该节点，指向右节点
+// 根节点入栈
+// 循环执行以下操作：如果栈顶节点的左孩子存在，左孩子入栈。如果左孩子不存在，出战并访问该节点，检查右孩子，右孩子存在，则右孩子入栈。
+// 栈空时算法结束
 template<class T>
 void BST<T>::inorder<BSTNode<T> * root>
 {
@@ -169,10 +171,13 @@ void BST<T>::inorder<BSTNode<T> * root>
 				stk.push(p);
 				p = p -> left;
 			}
+			if(!stk.empty())
+			{
 				p = stk.top();
 				stk.pop();
 				visit(p);		
 				p = p -> right;
+			}
 	   }
 }
 
