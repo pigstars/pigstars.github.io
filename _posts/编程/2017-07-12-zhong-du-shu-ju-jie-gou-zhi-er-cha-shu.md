@@ -53,6 +53,8 @@ void BST<T>::bfs(BSTNode<T> *root)
 若要每行输出之后换行
 
 ```C
+// 使用队列来进行宽度优先遍历
+// 同时使用last表示当前行的最后一个，nlast表示下一行的最后一个元素
 tempalte<class T>
 void BST<T>::bfs(BSTNode<T> * root)
 {
@@ -72,10 +74,12 @@ void BST<T>::bfs(BSTNode<T> * root)
 			if(temp -> right)
 				que.push(temp -> right);
 			nlast = que.back();
+			 // 每当有元素进入时，nlast指向队列最末端元素，此时nlast不一定是下一行的最末端元素
 			if(temp == last)
 			{
-				last = nlast;
 				cout<<endl;
+				last = nlast; // 当该行遇到最后一个元素时，换行，此时nlast一定是下一行的最末元素，因为该行的所有孩子进入队列
+
 			}
 			else
 			{
@@ -127,6 +131,7 @@ void BST<T>::postorder(BSTNode<T> *p)
 
 ```C
 // 先序遍历
+// 通过使用栈，访问该节点，该节点的右儿子先入（因为先入后出），左儿子进入栈。如此循环，当栈为空时结束。
 template<class T>
 void BST<T>::preorder(BSTNode<T> *root)
 {
@@ -148,11 +153,15 @@ void BST<T>::preorder(BSTNode<T> *root)
 }
 
 // 中序遍历
+// 首先将最左边的元素依次入栈，然后弹出栈，访问该节点，指向该节点右节点，
+// 下次循环开始，将该节点的左节点依次入栈，弹栈，访问该节点，指向右节点
 template<class T>
 void BST<T>::inorder<BSTNode<T> * root>
 {
       stack<BSTNode <T>*> stk;
 		BSTNode <T> * p = root;
+		if(root == nullptr)
+		return ;
 		while (!stk.empty() || p!= nullptr)
 		{
 			while (p)
@@ -160,22 +169,90 @@ void BST<T>::inorder<BSTNode<T> * root>
 				stk.push(p);
 				p = p -> left;
 			}
-			
-			if(p == nullptr)
-			{
 				p = stk.top();
 				stk.pop();
 				visit(p);		
 				p = p -> right;
-			}
 	   }
 }
 
 // 后序遍历
+// 准备两个指针，首先将最左侧的节点依次入栈，若该节点右侧为空或已被访问，方才能够访问该节点，否则将该节点再次入栈，并指向该节点右侧，重复上述循环。
 template <class T>
-void BST<T>::postorder(BST<T> * root)
+void BST<T>::postorder(BSTNode<T> * root)
 {
-    
+   BSTNode<T> * p ,* hasChecked;
+		stack<BSTNode<T> *> stk;
+		p = hasChecked = root;
+		while(p != 0)
+		{
+			for(;p -> left;p = p-> left)
+			{
+				stk.push(p);
+			}
+			while(p->right == 0 || p->right == hasChecked)
+			{
+				visit(p);
+				hasChecked = p;
+				if(stk.empty())
+					return ;
+				p = stk.top();
+				stk.pop();
+			}
+			stk.push(p);
+			p = p->right;
+		}}
+		
+// Morris 算法 不使用额外空间的非递归中序遍历
+/*
+     1          
+    / \          
+   2   3     
+  ／\   \            
+  4 5    6            
+                   
+  if 没有左节点，访问该节点，指向右节点
+  else  
+        寻找左节点的最右节点
+            若该节点的右节点为空 
+                则与主指针相连，主指针左移
+            若该节点的右节点为主指针（表示已经连接过，左部已经全部访问过）
+                则访问主指针
+                主指针右移
+*/
+template <class T>
+void BST<T>::Inorder(BSTNode <T> * root)
+{
+    BSTNode <T> * p,*temp;
+	p = temp = root;
+	while(p)
+	{
+		if(p -> left == nullptr)
+		{
+			visit(p);
+			p = p -> right;
+		}
+		else
+		{
+			temp = p -> left;
+			while (temp -> right != nullptr && temp -> right != p )
+			{
+				temp = temp -> right;
+			}
+			if(temp -> right == nullptr)
+			{
+				temp -> right = p;
+				p = p -> left;
+			}
+			else if(temp -> right == p)
+			{
+				visit(p);
+				temp -> right = nullptr;
+				p = p -> right;
+			}
+		}
+	}
+
 }
 ```
 
