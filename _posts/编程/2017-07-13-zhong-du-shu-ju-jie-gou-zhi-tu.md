@@ -178,4 +178,39 @@ void PRIM (MGraph * G,int v,int * visited)
 }
 ```
 
+Kruskal 算法
+
+```C
+struct Node 
+{
+	int a,b;
+	int w;
+}Node;
+Node node[MAXSIZE]; // 在主函数内已经输入完毕
+void Kruskal(AGraph * G,int &sum ,Road road[])
+{
+	// 初始化操作
+	int visited[MAXSIZE] = {0};
+	int v[MAXSIZE]; 
+	sum = 0;
+	int a,b;
+	for(int i = 0;i < G->n;i++)
+	{
+		v[i] = i;
+	}
+	sort(node,G->e);
+	int min = INF;
+	for(int i = 0;i < G -> e;i++)
+	{
+		a = getRoot(node[i].a);
+		b = getRoot(node[i].b);
+		if(a != b)
+		{
+			v[a] = b;
+			sum += node[i].w;
+		}
+	}
+}
+```
+
 
