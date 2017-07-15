@@ -148,10 +148,13 @@ void PRIM (MGraph * G,int v,int * visited)
     int vset[MAXSIZE],lowcast[MAXSIZE];
     int sum = 0;
     vset[v] = 1;
+    // 访问节点
     for(int i = 0;i < G.n;i++)
     {
         lowcast[i] = G -> edges[v][i];
+        //  将费用更新为当前节点与其他节点的费用
     }
+
     
     for (int i =1 ;i < G.n;i++)
     {
@@ -163,6 +166,7 @@ void PRIM (MGraph * G,int v,int * visited)
             {
                 loc = j;
                 min = lowcast[j];
+                // 找到费用最少的节点所在的位置
             }
         }
         
@@ -172,6 +176,7 @@ void PRIM (MGraph * G,int v,int * visited)
         {
             if(visited[j] == 0 && lowcast[j] > G->edges[loc][j])
                 lowcast[j] = G->edges[loc][j];
+            // 更新周围未被访问的节点，更新费用    
         }
     }
     cout<<"sum:"<<sum;
@@ -191,14 +196,15 @@ void Kruskal(AGraph * G,int &sum ,Road road[])
 {
 	// 初始化操作
 	int visited[MAXSIZE] = {0};
-	int v[MAXSIZE]; 
+	int v[MAXSIZE];  
+	// 作为公共祖先数组，可用于查找节点的父节点
 	sum = 0;
 	int a,b;
 	for(int i = 0;i < G->n;i++)
 	{
 		v[i] = i;
 	}
-	sort(node,G->e);
+	sort(node,G->e); // 排序
 	int min = INF;
 	for(int i = 0;i < G -> e;i++)
 	{
