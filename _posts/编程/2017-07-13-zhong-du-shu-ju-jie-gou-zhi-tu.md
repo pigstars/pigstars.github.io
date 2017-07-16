@@ -219,4 +219,50 @@ void Kruskal(AGraph * G,int &sum ,Road road[])
 }
 ```
 
+## 最短路径
+
+dijkstra 最短路径算法
+
+```C
+void shortPath(MGraph *G,int v)
+{
+    int visited[MAXSIZE] = {0};
+    int dict[MAXSIZE],father[MAXSIZE];
+    for(int i = 0;i < G->n;i++)
+    {
+        dict[i] = G->edges[v][i];
+        if(dict[i] < INF)
+        {
+            father[i] = v;
+        }
+        else
+        {
+            father[i] = -1;
+        }
+    }
+    for(int i = 0;i < G.n -1;i++)
+    {
+        int min = INF;
+        int loc = 0;
+        for(int j = 0;j < G.n;j++)
+        {
+            if(visited[j] == 0 && dict[j] < min)
+            {
+                min = dict[j];
+                loc = j;
+            }
+        }
+        visite[loc] = 1;
+        for(int j = 0;j < G.n;j++)
+        {
+            if(visited[j] == 0 && dict[j] < G->edges[loc][j] + dict[loc])
+            {
+            dict[j] = G->edges[loc][j] + dict[loc];
+            father[j] = loc;
+            }
+        }
+    }
+}
+            
+```
 
