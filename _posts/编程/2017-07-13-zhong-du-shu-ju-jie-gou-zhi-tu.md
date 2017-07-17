@@ -240,6 +240,7 @@ void shortPath(MGraph *G,int v)
             father[i] = -1;
         }
     }
+    visite[loc] = 1;
     for(int i = 0;i < G.n -1;i++)
     {
         int min = INF;
@@ -255,7 +256,7 @@ void shortPath(MGraph *G,int v)
         visite[loc] = 1;
         for(int j = 0;j < G.n;j++)
         {
-            if(visited[j] == 0 && dict[j] < G->edges[loc][j] + dict[loc])
+            if(visited[j] == 0 && dict[j] > G->edges[loc][j] + dict[loc])
             {
             dict[j] = G->edges[loc][j] + dict[loc];
             father[j] = loc;
