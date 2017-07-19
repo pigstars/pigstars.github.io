@@ -90,4 +90,75 @@ FileSystem & tfs()
 若当前类将会作为基类被继承，则析构函数最好申请为virtual函数，可防止内存泄漏。
 心得：只有当class内至少一个virtual函数，才为它声明virtual析构函数
 
+析构函数运作方式：最深层派生的那个class其析构函数最先被调用，然后是其每一个base class的析构函数被调用。
+
+## 条款 08:别让我异常逃离析构函数
+
+* 当两个异常同时存在，程序若不是结束执行就是导致不明确行为
+* 因此 析构函数绝对不要吐出异常。如果一个被析构函数调用的函数可能抛出异常，析构函数应该捕捉任何异常，然后吞下它们或结束程序
+* 如果客户需要对某个操作函数期间抛出的异常做出反应，那么class应该提供一个普通函数（而非在析构函数函数中）执行该操作
+
+## 条款 09:绝不在构造和析构过程中调用virtual函数
+
+```C
+class Transaction {
+public:
+    Transaction();
+    virtual void logTransaction() const = 0;
+};
+Transaction::Transaction()
+{
+    ...
+    logTransaction();
+}
+
+class BuyTransaction:public Transaction{
+public:
+    virtual void log TRansaction () const;
+    ...;
+};
+
+
+BuyTransaction b;
+// 派生类对象内的基类成分在派生类自身成分被构造之前先构造妥当
+// 此时 被调用logTransaction是Transaction内版本，而不是BuyTransaction版本
+// 基类构造期间virtual函数不会下降到派生类阶层
+```
+* 构造函数和析构函数期间不要调用virtual函数，因为这类调用从不下降至派生类（比起当前构造函数和析构函数那层）
+
+## 条款 10:令operator= 返回一个reference to *this
+
+为了方便连续使用 = 
+* 令赋值操作符返回一个reference to *this
+
+## 条款 11：在operator= 中处理“自我赋值”
+
+```C
+// 不安全代码,当出现自我赋值时，出现问题
+Widget & Widget::operator = (const Widget & rhs)
+{
+    delete pb;
+    pb = new Bitmap(*rhs.pb);
+    return * this;
+}
+
+// 加入证同测试
+
+if(this == &rhs) return *this;
+
+// 当new Bitmap 出现异常， pb指向一块被删除的Bitmap ，修改如下
+
+Widget & Widget::operator = (const Widget & rhs)
+{
+   Bitmap * pOrig = pb;
+   pb = new Bitmap(*rhs.pb); // 若new Bitmap 出现异常，则pb保持原状
+   delete pOrig;
+   return *this;
+}
+```
+
+## 条款 12：复制对象时勿忘其每一个成分
+* 当编写copying函数，确保 复制所有local成员变量 ，调用多有base classes 内的适当的copying函数
+* 消除copy构造函数和 copy assignment操作符的相近代码：建立一个新的成员函数给两者调用。
+ 
 
