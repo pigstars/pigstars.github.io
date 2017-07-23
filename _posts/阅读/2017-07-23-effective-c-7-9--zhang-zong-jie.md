@@ -9,12 +9,13 @@ tags: "EffectiveCPP"
 ## 条款 41:了解隐式接口和编译期多态
 * 通常显式接口由函数的签名式（函数的名称，参数类型，返回类似）构成
 * 隐式接口由有效表达式组成
- template 和 class 都支持接口和多态。对于class而言，接口显式的，以函数签名为中心。多态则通过virtual函数发生于运行期。对template而言，接口是隐式的，奠基于有效表达式。多态通过template具现化和函数的重载解析发生于编译器。
+
+template 和 class 都支持接口和多态。对于class而言，接口显式的，以函数签名为中心。多态则通过virtual函数发生于运行期。对template而言，接口是隐式的，奠基于有效表达式。多态通过template具现化和函数的重载解析发生于编译器。
  
 ## 条款 42:了解typename的双重意义
 template<class T> 和 template<typename T> 意义完全相同
 
-> template 内出现的名称如何相依于某个template，则为从属名称 T hello
+> template 内出现的名称如果相依于某个template，则为从属名称 T hello     
 > 如果从属名称在class内呈嵌套状，则为嵌套从属名称 T:num hello 
 
 嵌套从属名称可能导致解析困难，使用typename标志嵌套从属类型名称，**不能**用在基类成员列或成员初值列内作为基类修饰符
