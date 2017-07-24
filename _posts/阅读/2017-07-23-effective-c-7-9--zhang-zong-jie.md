@@ -141,4 +141,34 @@ int main()
 }
 ```
 
+## 条款 49:了解new-handler的行为
+
+* 当operator new无法满足某一内存分配需求，便抛出异常，以前会返回一个null指针。
+* set_new_handler允许客户指定一个函数，在内存分配无法满足时被调用
+
+## 条款 50:了解new和delete的合理替换时机
+替换new和delete理由：
+1. 用来检测运用上的错误：将new所得内存，delete失败则导致内存泄漏。各种编程错误导致overruns和underruns。
+2. 为了强化效能：编译器自带new和delete主要用于一般目的，效率一般。
+3. 为了收集统计上的数据：收集锻件如何使用其动态内存。
+4. 为了增加分配和归还的速度。
+5. 为了降低缺省内存管理器带来的空间额外开销。
+6. 为了弥补缺省分配器中的非最佳对齐位
+
+## 条款 51:编写new和delete时需固守常规
+* new应该内含一个无穷循环，并在其中尝试分配内存。若无法满足，则调用new-handler，同时也应该有能力处理0bytes申请。Class专属版本还应该处理“比正确大小更大的错误申请”。
+* operator delete应该在收到null指针时不做任何事。专属版本还应该处理比正确大小更大的申请。
+
+## 条款 52:写了placement new 也要写placement delete
+* 如果operator new接受的参数除了一定会有的那个size_t之外还有其他，这便是所谓的placement new.
+* placement view 特别有用的一个是“接受一个指针指向对象该被构造之处”。
+* 当声明placement new和placement delete，请确定不要无意识地遮掩了它们的正常版本
+
+## 条款 53:不要忽略编译器的警告
+
+## 条款 54:让自己熟悉包括TR1在内的标准程序库
+
+## 条款 55:让自己熟悉Boost
+
+
 
